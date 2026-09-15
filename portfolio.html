@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ineeleng Bagalatia — Software Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #F6F4EF;
+    --ink: #1F2A24;
+    --ink-soft: #626F68;
+    --line: rgba(31,42,36,0.15);
+    --line-soft: rgba(31,42,36,0.08);
+    --accent: #3B4FD9;
+    --accent-soft: #DEE2FA;
+    --white: #FFFFFF;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    line-height:1.55;
+  }
+  a{color:var(--accent); text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  h1,h2,h3{font-family:'Fraunces', serif; color:var(--ink); font-weight:500; letter-spacing:-0.01em;}
+
+  .layout{display:grid; grid-template-columns:240px 1fr; max-width:1080px; margin:0 auto;}
+
+  /* Sidebar */
+  .sidebar{
+    position:sticky; top:0; align-self:start; height:100vh;
+    padding:48px 28px; display:flex; flex-direction:column; justify-content:space-between;
+    border-right:1px solid var(--line);
+  }
+  .brand h1{font-size:22px; line-height:1.25;}
+  .brand .role{margin-top:8px; font-size:14px; color:var(--ink-soft);}
+  nav{margin-top:56px; display:flex; flex-direction:column; gap:16px;}
+  nav a{color:var(--ink); font-size:15px;}
+  nav a:hover{color:var(--accent); text-decoration:none;}
+  .sidebar .loc{font-size:13px; color:var(--ink-soft);}
+
+  main{padding:0 48px;}
+  section{padding:80px 0; border-bottom:1px solid var(--line-soft);}
+  section:last-of-type{border-bottom:none;}
+
+  /* Hero */
+  .hero{padding-top:64px;}
+  .hero h1{font-size:46px; line-height:1.18; max-width:560px;}
+  .hero .accent-word{color:var(--accent);}
+  .hero p.lede{margin-top:22px; font-size:17px; color:var(--ink-soft); max-width:460px;}
+  .hero-actions{margin-top:32px; display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{
+    font-size:14px; padding:12px 22px; border:1px solid var(--ink); color:var(--ink); display:inline-block;
+  }
+  .btn.primary{background:var(--ink); color:var(--white); border-color:var(--ink);}
+  .btn:hover{background:var(--ink); color:var(--white); text-decoration:none;}
+  .btn.primary:hover{background:var(--accent); border-color:var(--accent);}
+
+  .section-head{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:40px; gap:20px;}
+  .section-head h2{font-size:28px;}
+  .section-head .count{font-size:14px; color:var(--ink-soft);}
+
+  /* Projects */
+  .project{
+    display:grid; grid-template-columns:44px 1fr; gap:22px;
+    padding:32px 0; border-top:1px solid var(--line-soft);
+  }
+  .project:first-of-type{border-top:none; padding-top:0;}
+  .project .num{font-size:14px; color:var(--accent); padding-top:6px;}
+  .project h3{font-size:22px; margin-bottom:6px;}
+  .project .role{font-size:14px; color:var(--ink-soft); margin-bottom:12px;}
+  .project p.desc{color:var(--ink-soft); font-size:15.5px; max-width:600px; margin-bottom:16px;}
+  .tags{display:flex; flex-wrap:wrap; gap:8px;}
+  .tag{
+    font-size:12.5px; border:1px solid var(--line); padding:5px 11px; color:var(--ink-soft); border-radius:2px;
+  }
+
+  /* Skills */
+  .skills-list{display:grid; grid-template-columns:1fr 1fr; gap:0;}
+  .skill-row{
+    padding:20px 0; border-top:1px solid var(--line-soft);
+    display:grid; grid-template-columns:160px 1fr; gap:16px;
+  }
+  .skills-list .skill-row:nth-child(1),
+  .skills-list .skill-row:nth-child(2){border-top:none;}
+  .skill-row h4{font-size:15px; font-weight:600; color:var(--ink);}
+  .skill-row p{font-size:14.5px; color:var(--ink-soft);}
+
+  /* Experience / education */
+  .entry{display:grid; grid-template-columns:120px 1fr; gap:20px; padding:24px 0; border-top:1px solid var(--line-soft);}
+  .entry:first-of-type{border-top:none; padding-top:0;}
+  .entry .when{font-family:'Fraunces', serif; font-size:16px; color:var(--ink-soft); padding-top:2px;}
+  .entry h3{font-size:18px; margin-bottom:4px;}
+  .entry .org{font-size:14px; color:var(--ink-soft); margin-bottom:8px;}
+  .entry p.desc{font-size:14.5px; color:var(--ink-soft); max-width:560px;}
+
+  /* Contact / footer */
+  footer{padding:80px 0 56px;}
+  footer h2{font-size:30px; margin-bottom:16px; max-width:480px;}
+  footer p.lede{color:var(--ink-soft); max-width:460px; margin-bottom:32px; font-size:16px;}
+  .contact-row{display:flex; flex-wrap:wrap; gap:32px; margin-bottom:40px;}
+  .contact-row div span{display:block; color:var(--ink-soft); font-size:12.5px; margin-bottom:5px;}
+  .contact-row div a{font-size:15px;}
+  .foot-bottom{padding-top:24px; border-top:1px solid var(--line-soft); font-size:13px; color:var(--ink-soft);}
+
+  /* Mobile */
+  @media (max-width:820px){
+    .layout{grid-template-columns:1fr;}
+    .sidebar{
+      position:relative; height:auto; flex-direction:row; align-items:center; justify-content:space-between;
+      padding:24px 20px; border-right:none; border-bottom:1px solid var(--line);
+    }
+    nav{margin-top:0; flex-direction:row; gap:14px;}
+    nav a{font-size:13px;}
+    .sidebar .loc{display:none;}
+    main{padding:0 20px;}
+    .hero{padding-top:40px;}
+    .hero h1{font-size:32px;}
+    .skills-list{grid-template-columns:1fr;}
+    .skills-list .skill-row:nth-child(2){border-top:1px solid var(--line-soft);}
+    .entry{grid-template-columns:1fr; gap:6px;}
+    section{padding:56px 0;}
+  }
+</style>
+</head>
+<body>
+
+<div class="layout">
+  <div class="sidebar">
+    <div>
+      <div class="brand">
+        <h1>Ineeleng<br>Bagalatia</h1>
+        <div class="role">Software Developer</div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+    <div class="loc">Gaborone, Botswana<br>Computer Science&amp; Software Engineering, BIUST</div>
+  </div>
+
+  <main>
+    <section class="hero" style="border-bottom:none;">
+      <h1>Software development with a <span class="accent-word">networking</span> background.</h1>
+      <p class="lede">I build web apps, mobile apps and backends — and because I also run the IT and networking side of things day to day, I design systems that hold up outside the demo. Currently taking on freelance projects.</p>
+      <div class="hero-actions">
+        <a href="#work" class="btn primary">See the work</a>
+        <a href="#contact" class="btn">Get in touch</a>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="section-head">
+        <h2>About me</h2>
+      </div>
+      <p class="desc" style="font-size:16px; max-width:620px; margin-bottom:16px;">I'm a fairly typical software engineer most of my day is spent moving between an IDE, documentation, and a browser tab full of Stack Overflow and GitHub issues. I like the problem-solving side of the job more than any one language or framework: figuring out why something breaks, then figuring out the cleanest way to stop it breaking again.</p>
+      <p class="desc" style="font-size:16px; max-width:620px; margin-bottom:16px;">Working IT alongside development has shaped how I build. Once you've been the person woken up because a server or a mail server went down, you start writing software differently — thinking about what happens when things fail, not just when they work. I'm still learning constantly and still enjoy the process more than I let on when a bug has been open for six hours.</p>
+    </section>
+
+    <section id="work">
+      <div class="section-head">
+        <h2>Selected work</h2>
+        <div class="count">3 projects</div>
+      </div>
+
+      <div class="project">
+        <div class="num">01</div>
+        <div>
+          <h3>Offline SOS Mesh Communication App</h3>
+          <div class="role">Final-year research project · ongoing</div>
+          <p class="desc">An Android app for emergency communication with no internet or cellular signal, using Bluetooth Low Energy and Wi-Fi Direct to relay messages device-to-device. Handles MAC address rotation and connection drops to keep the mesh stable, with shake-to-alert and encrypted, authority-bound messaging.</p>
+          <div class="tags">
+            <span class="tag">React Native (Expo)</span>
+            <span class="tag">Kotlin native modules</span>
+            <span class="tag">BLE mesh networking</span>
+            <span class="tag">Wi-Fi Direct</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="num">02</div>
+        <div>
+          <h3>Carerra Vault</h3>
+          <div class="role">Attachment project — Carerra Holdings</div>
+          <p class="desc">Technicians managing servers across client sites were sharing credentials verbally over the phone. Built a secure portal for storing them instead, with role-based access and OTP verification — now used org-wide.</p>
+          <div class="tags">
+            <span class="tag">Web</span>
+            <span class="tag">OTP</span>
+            <span class="tag">Role-based access</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="num">03</div>
+        <div>
+          <h3>Transcript Management System</h3>
+          <div class="role">Java desktop application</div>
+          <p class="desc">A GUI application for calculating SGPA/CGPA and generating academic transcripts as TXT or PDF, with a separate registry module for staff to manage student records securely.</p>
+          <div class="tags">
+            <span class="tag">Java</span>
+            <span class="tag">GUI</span>
+            <span class="tag">PDF generation</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-head">
+        <h2>Skills</h2>
+      </div>
+      <div class="skills-list">
+        <div class="skill-row">
+          <h4>Languages</h4>
+          <p>Java, Python, C, C++, Dart</p>
+        </div>
+        <div class="skill-row">
+          <h4>Frontend</h4>
+          <p>React, Next.js, HTML, WordPress websites</p>
+        </div>
+        <div class="skill-row">
+          <h4>Backend</h4>
+          <p>Spring Boot, Node.js</p>
+        </div>
+        <div class="skill-row">
+          <h4>Mobile</h4>
+          <p>React Native, Android (Java / Kotlin)</p>
+        </div>
+        <div class="skill-row">
+          <h4>Databases</h4>
+          <p>PostgreSQL (Supabase), MySQL, Firebase</p>
+        </div>
+        <div class="skill-row">
+          <h4>Networking &amp; IT</h4>
+          <p>Email &amp; domain hosting, network infrastructure &amp; DNS</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="section-head">
+        <h2>Experience &amp; education</h2>
+      </div>
+      <div class="entry">
+        <div class="when">2025</div>
+        <div>
+          <h3>IT Attachment</h3>
+          <div class="org">Carerra Holdings, Botswana</div>
+          <p class="desc">Supported IT operations across multiple client sites, managing server infrastructure and troubleshooting hardware and networking issues alongside senior technicians on-site and remotely.</p>
+        </div>
+      </div>
+      <div class="entry">
+        <div class="when">2022–26</div>
+        <div>
+          <h3>BSc Computer Science &amp; Software Engineering</h3>
+          <div class="org">Botswana International University of Science and Technology (BIUST), Palapye</div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<footer id="contact">
+  <div class="layout" style="grid-template-columns:240px 1fr;">
+    <div></div>
+    <div style="padding:0 48px;">
+      <h2>Let's build something.</h2>
+      <p class="lede">Open to freelance work — websites, web apps, mobile apps, backend systems and or WordPress site setup.</p>
+      <div class="contact-row">
+        <div><span>Email</span><a href="mailto:juniorbagalatia@gmail.com">juniorbagalatia@gmail.com</a></div>
+        <div><span>Phone</span><a href="tel:+26775148671">+267 75 148 671</a></div>
+        <div><span>LinkedIn</span><a href="https://www.linkedin.com/in/ineeleng-bagalatia-b86725303" target="_blank" rel="noopener">linkedin.com/in/ineeleng-bagalatia-b86725303</a></div>
+      </div>
+      <div class="foot-bottom">Ineeleng Bagalatia — Gaborone, Botswana · © 2026</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
