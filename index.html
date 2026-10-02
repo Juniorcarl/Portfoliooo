@@ -74,6 +74,17 @@
   .project .num{font-size:14px; color:var(--accent); padding-top:6px;}
   .project h3{font-size:22px; margin-bottom:6px;}
   .project .role{font-size:14px; color:var(--ink-soft); margin-bottom:12px;}
+  .project .role.ongoing{
+    display:inline-block;
+    color:#fff;
+    background:#3B4FD9;
+    border:1px solid #3B4FD9;
+    border-radius:999px;
+    padding:5px 11px;
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:0.02em;
+  }
   .project p.desc{color:var(--ink-soft); font-size:15.5px; max-width:600px; margin-bottom:16px;}
   .tags{display:flex; flex-wrap:wrap; gap:8px;}
   .tag{
@@ -205,13 +216,14 @@
       <div class="project">
         <div class="num">03</div>
         <div>
-          <h3>Transcript Management System</h3>
-          <div class="role">Java desktop application</div>
-          <p class="desc">A GUI application for calculating SGPA/CGPA and generating academic transcripts as TXT or PDF, with a separate registry module for staff to manage student records securely.</p>
+          <h3>Smart Expense Tracker</h3>
+          <div class="role ongoing">ONGOING · Personal finance project</div>
+          <p class="desc">A smart expense-tracking app designed to turn uploaded bank statements into useful spending insights. The system extracts transactions, automatically identifies income and expenses, categorizes spending using transaction and merchant information, highlights uncertain classifications for review, and helps users analyze spending and plan upcoming monthly budgets.</p>
           <div class="tags">
-            <span class="tag">Java</span>
-            <span class="tag">GUI</span>
-            <span class="tag">PDF generation</span>
+            <span class="tag">Expense tracking</span>
+            <span class="tag">AI-assisted categorization</span>
+            <span class="tag">Bank statement analysis</span>
+            <span class="tag">Budgeting</span>
           </div>
         </div>
       </div>
