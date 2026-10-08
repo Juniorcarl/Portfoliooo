@@ -86,10 +86,12 @@
     letter-spacing:0.02em;
   }
   .project p.desc{color:var(--ink-soft); font-size:15.5px; max-width:600px; margin-bottom:16px;}
+  .project .tag-label{font-size:12.5px; font-weight:600; color:var(--ink); margin:14px 0 8px;}
   .tags{display:flex; flex-wrap:wrap; gap:8px;}
   .tag{
     font-size:12.5px; border:1px solid var(--line); padding:5px 11px; color:var(--ink-soft); border-radius:2px;
   }
+  .project .visit{display:inline-block; margin-top:14px; font-size:14px;}
 
   /* Skills */
   .skills-list{display:grid; grid-template-columns:1fr 1fr; gap:0;}
@@ -181,11 +183,49 @@
     <section id="work">
       <div class="section-head">
         <h2>Selected work</h2>
-        <div class="count">3 projects</div>
+        <div class="count">5 projects</div>
       </div>
 
       <div class="project">
         <div class="num">01</div>
+        <div>
+          <h3>Doctor on Call Website</h3>
+          <div class="role">Workplace project — Doctor on Call · doc.co.bw</div>
+          <p class="desc">The company website, built from scratch in HTML and CSS. A PHP backend handles the contact form and sends email, with captcha protection to keep spam out. The site also pulls the latest posts from the company blog automatically, so new articles show up without anyone editing the page.</p>
+          <div class="tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">PHP</span>
+            <span class="tag">Email sending</span>
+            <span class="tag">Captcha</span>
+            <span class="tag">Blog integration</span>
+          </div>
+          <a class="visit" href="https://doc.co.bw" target="_blank" rel="noopener">Visit doc.co.bw &rarr;</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="num">02</div>
+        <div>
+          <h3>Doctor on Call Blog</h3>
+          <div class="role">Workplace project — Doctor on Call · doctoroncall.co.bw</div>
+          <p class="desc">A WordPress blog that powers the content side of the company website. Set up, themed, secured and maintained by me, and connected to the main HTML site, which displays its latest posts. Built with Elementor and add-ons for layout, with image optimisation and security scanning to keep it fast and safe.</p>
+          <div class="tags">
+            <span class="tag">WordPress</span>
+            <span class="tag">Astra theme</span>
+            <span class="tag">Elementor</span>
+            <span class="tag">ElementsKit</span>
+            <span class="tag">Royal Elementor Addons</span>
+            <span class="tag">ShortPixel</span>
+            <span class="tag">Vigilant</span>
+            <span class="tag">WPScan</span>
+          </div>
+          <a class="visit" href="https://doctoroncall.co.bw" target="_blank" rel="noopener">Visit doctoroncall.co.bw &rarr;</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="num">03</div>
         <div>
           <h3>Offline SOS Mesh Communication App</h3>
           <div class="role">Final-year research project · ongoing</div>
@@ -200,7 +240,7 @@
       </div>
 
       <div class="project">
-        <div class="num">02</div>
+        <div class="num">04</div>
         <div>
           <h3>Carerra Vault</h3>
           <div class="role">Attachment project — Carerra Holdings</div>
@@ -214,7 +254,7 @@
       </div>
 
       <div class="project">
-        <div class="num">03</div>
+        <div class="num">05</div>
         <div>
           <h3>Smart Expense Tracker</h3>
           <div class="role ongoing">ONGOING · Personal finance project</div>
@@ -236,15 +276,15 @@
       <div class="skills-list">
         <div class="skill-row">
           <h4>Languages</h4>
-          <p>Java, Python, C, C++, Dart</p>
+          <p>Java, Python, C, C++, Dart, PHP</p>
         </div>
         <div class="skill-row">
           <h4>Frontend</h4>
-          <p>React, Next.js, HTML, WordPress websites</p>
+          <p>React, Next.js, HTML, CSS, WordPress websites</p>
         </div>
         <div class="skill-row">
           <h4>Backend</h4>
-          <p>Spring Boot, Node.js</p>
+          <p>Spring Boot, Node.js, PHP</p>
         </div>
         <div class="skill-row">
           <h4>Mobile</h4>
@@ -266,7 +306,7 @@
         <h2>Experience &amp; education</h2>
       </div>
       <div class="entry">
-        <div class="when">2026–present</div>
+        <div class="when">3 Aug 2026 – present</div>
         <div>
           <h3>Junior Software Developer</h3>
           <div class="org">Doctor on Call</div>
